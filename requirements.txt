@@ -1,0 +1,9 @@
+numpy
+pymatgen==2023.11.12
+scipy
+scikit-learn
+tqdm
+matgl==0.8.5
+torch
+matplotlib
+jupyterlab
