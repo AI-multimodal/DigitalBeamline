@@ -6,7 +6,7 @@ import numpy as np
 import torch
 from yaml import safe_load
 
-from ._featurizer import (
+from .featurizer import (
     featurize_material,
     _load_default_featurizer,
 )
@@ -16,6 +16,9 @@ GRIDS = {
     "FEFF": {
         "Ti": np.linspace(4965, 5075, 200),
         "Cu": np.linspace(8983, 9124, 200),
+    },
+    "VASP": {
+        "Ti": np.linspace(4715, 4765, 200)  # this is just a guess honestly
     }
 }
 

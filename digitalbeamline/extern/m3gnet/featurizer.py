@@ -33,6 +33,7 @@
 # POSSIBILITY OF SUCH DAMAGE.
 
 
+from pathlib import Path
 import numpy as np
 
 from matgl.graph.compute import (
@@ -50,7 +51,10 @@ from matgl import load_model
 
 @cache
 def _load_default_featurizer():
-    model = load_model("M3GNet-MP-2021.2.8-PES").model
+    path = Path(__file__).resolve().parent / "cached_models/M3GNet-MP-2021.2.8-PES"
+    print(f"Loading default featurizer from {path}")
+    model = load_model(path).model
+    
     model.eval()
     return model
 
